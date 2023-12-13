@@ -3,7 +3,7 @@
 
 ### Description
 
-NOVI Bootcamp Web Developer assignment: [frontend-html-css-concept-opdracht](https://github.com/hogeschoolnovi/frontend-html-css-concept-opdracht/tree/master).
+NOVI Bootcamp Web Developer (Frontend) assignment: [frontend-html-css-concept-opdracht](https://github.com/hogeschoolnovi/frontend-html-css-concept-opdracht/tree/master).
 
 ### Languages
 
