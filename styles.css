@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+
 /*////////////////////////
     Table of Contents
     1. Global Styles
@@ -12,8 +13,11 @@
         4.1 Header
         4.2 Company description
         4.3 Case studies
-    5. Media Queries
+        4.4 Services
+        4.5 Contact us
+        4.6 Footer
 ////////////////////////*/
+
 
 /* ------------------------------- 1. Global Styles -------------------------------- */
 
@@ -27,10 +31,10 @@
     --paars: #5722CD;
     --blauw: #4845E4;
     --roze: #ED4385;
-    --zwart: #0C0C0C; /* Voor de standaard tekst */
-    --lichtpaars: #F2F0FF; /* voor de grote zwevende woorden, zoals "hello" en "services" */
-    --lichtgrijs: #F3F6F9; /* voor de achtergrond van de projecten */
-    --grijs: #7A7A7A; /* voor de service-tegel tekst */
+    --zwart: #0C0C0C;
+    --lichtpaars: #F2F0FF;
+    --lichtgrijs: #F3F6F9;
+    --grijs: #7A7A7A;
     --wit: #FFF;
 }
 
@@ -42,15 +46,43 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', serif;
 }
 
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.contact-us h2 {
+    color: var(--wit);
+    font-size: 2.3rem;
+}
+
+@media screen and (max-width: 600px) {
+    .contact-us h2 {
+        font-size: 1.7rem;
+    }
+}
+
+h2, h3 {
+    color: var(--paars);
+}
+
 li a {
     color: var(--wit);
     text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+    li a {
+        font-size: 0.9rem;
+    }
 }
 
 header {
@@ -59,6 +91,12 @@ header {
 
 header p {
     font-size: 1.3rem;
+}
+
+@media screen and (max-width: 600px) {
+    header p {
+        font-size: 1rem;
+    }
 }
 
 .description p {
@@ -70,7 +108,7 @@ header p {
 
 @media screen and (max-width: 600px) {
     .description p {
-        font-size: 1.5rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -78,6 +116,47 @@ a {
     color: var(--paars);
     font-weight: 700;
     text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+    .case-studies p {
+        font-size: 0.9rem;
+    }
+}
+
+.services p {
+    color: var(--grijs);
+    font-size: 0.9rem;
+}
+
+.contact-us p {
+    color: var(--wit);
+}
+
+@media screen and (max-width: 600px) {
+    .contact-us p {
+        font-size: 0.9rem;
+    }
+}
+
+label {
+    color: var(--wit);
+}
+
+@media screen and (max-width: 600px) {
+    label {
+        font-size: 0.9rem;
+    }
+}
+
+::placeholder {
+    color: var(--grijs);
+}
+
+@media screen and (max-width: 600px) {
+    footer p {
+        font-size: 0.7rem;
+    }
 }
 
 /* ------------------------------- 3. Layout --------------------------------------- */
@@ -95,7 +174,6 @@ a {
     flex-grow: 0;
     flex-shrink: 1;
     margin: 0 25px;
-    border: 2px dashed orange;
 }
 
 button {
@@ -113,8 +191,6 @@ button:hover {
     cursor: pointer;
 }
 
-/* --------------- 3.2 Other --------------------------- */
-
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
@@ -129,6 +205,12 @@ nav {
     display: flex;
     justify-content: flex-end;
     padding: 25px;
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        justify-content: center;
+    }
 }
 
 ul {
@@ -146,6 +228,12 @@ li {
     align-items: center;
     gap: 30px;
     padding: 100px 0;
+}
+
+@media screen and (max-width: 600px) {
+    .introduction {
+        padding: 60px 0;
+    }
 }
 
 h1 {
@@ -174,6 +262,8 @@ header img {
 
 .company-description {
     position: relative;
+    background-color: var(--wit);
+    margin-top: -1px;
     padding-bottom: 25px; /* to push .company-description-bevel down */
 }
 
@@ -247,12 +337,12 @@ header img {
 
 .case-studies .inner-container::after {
     content: "work";
-    font-size: 25rem;
+    font-size: 20rem;
     font-weight: 700;
     text-align: center;
     color: var(--wit);
     position: absolute;
-    top: -50px;
+    top: -30px;
     left: 0;
     width: 100%;
     z-index: -10;
@@ -263,7 +353,7 @@ header img {
         font-size: 8rem;
         top: 0;
     }
-}    
+}
 
 .case-studies article {
     display: flex;
@@ -304,7 +394,7 @@ header img {
     }
 }
 
-h2::after {
+.case-studies h2::after {
     content: url("./assets/squiggle_line.svg");
     display: block;
 }
@@ -337,4 +427,135 @@ h2::after {
     top: calc(100% - 50px);
 }
 
-/* ------------------------------- 5. Media Queries -------------------------------- */
+/* --------------- 4.4 Services ------------------- */
+
+.services {
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.services .inner-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 170px 0 100px 0;
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    .services .inner-container {
+        padding: 40px 0;
+    }
+}
+
+.services .inner-container::after {
+    content: "services";
+    font-size: 15rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--lichtpaars);
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+@media screen and (max-width: 992px) {
+    .services .inner-container::after {
+        font-size: 11rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        .services .inner-container::after {
+            font-size: 5rem;
+        }
+    }
+}
+
+.services article {
+    flex-basis: 325px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding: 25px;
+    border: 1px solid var(--grijs);
+    background-color: var(--wit);
+}
+
+.services img {
+    width: 25%;
+}
+
+.services h3 {
+    margin-top: 5px;
+}
+
+.services p {
+    margin-top: 20px;
+}
+
+.services-bevel {
+    border-top: 50px solid transparent;
+    border-left: 100vw solid var(--blauw);
+    position: absolute;
+    top: calc(100% - 50px);
+}
+
+/* --------------- 4.5 Contact us ------------------- */
+
+.contact-us {
+    background-color: var(--blauw);
+    text-align: center;
+    margin-top: -1px;
+}
+
+.contact-us .inner-container {
+    padding: 75px 0 60px 0;
+    flex-basis: 700px;
+}
+
+@media screen and (max-width: 600px) {
+    .contact-us .inner-container {
+        padding: 60px 0; 
+    }
+}
+
+.contact-us p {
+    margin-top: 30px;
+}
+
+form {
+    text-align: left;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+}
+
+textarea {
+    border: none;
+    display: block;
+    width: 100%;
+    padding: 20px;
+}
+
+.contact-us button {
+    width: 175px;
+    margin: 10px auto 0 auto;
+}
+
+/* --------------- 4.6 Footer ------------------- */
+
+footer {
+    background-color: var(--zwart);
+    color: var(--wit);
+    text-align: center;
+    padding: 20px;
+}
