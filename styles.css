@@ -10,7 +10,7 @@
         3.2 Other
     4. Areas
         4.1 Header
-        4.2 Introduction
+        4.2 Company description
         etc.
     5. Media Queries
 ////////////////////////*/
@@ -31,6 +31,7 @@
     --lichtpaars: #F2F0FF; /* voor de grote zwevende woorden, zoals "hello" en "services" */
     --lichtgrijs: #F3F6F9; /* voor de achtergrond van de projecten */
     --grijs: #7A7A7A; /* voor de service-tegel tekst */
+    --wit: #FFF;
 }
 
 /* ------------------------------- 2. Typography ----------------------------------- */
@@ -47,10 +48,69 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', serif;
 }
 
+li a {
+    color: var(--wit);
+    text-decoration: none;
+}
+
+header {
+    color: var(--wit);
+}
+
+header p {
+    font-size: 1.3rem;
+}
+
+.description p {
+    font-family: 'Merriweather', serif;
+    color: var(--paars);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 600px) {
+    .description p {
+        font-size: 1.5rem;
+    }
+}
+
+.description-container a {
+    color: var(--paars);
+    text-decoration: none;
+}
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusables ----------------------- */
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.inner-container {
+    flex-basis: 1200px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin: 0 25px;
+    border: 2px dashed orange;
+}
+
+button {
+    padding: 20px 35px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--roze);
+    box-shadow: 5px 10px 15px -10px var(--zwart);
+    font-family: inherit;
+    color: var(--wit);
+    text-transform: uppercase;
+}
+
+button:hover {
+    cursor: pointer;
+}
 
 /* --------------- 3.2 Other --------------------------- */
 
@@ -58,6 +118,110 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --------------- 4.1 Header ------------------------- */
 
-/* --------------- 4.2 Introduction ------------------- */
+header {
+    background: linear-gradient(90deg, rgba(72,69,228,1) 0%, rgba(87,34,205,1) 35%);
+    position: relative; /* to give .header-bevel a reference point */ 
+    padding-bottom: 100px; /* to push .header-bevel down */
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px;
+}
+
+ul {
+    display: flex;
+    gap: 25px;
+}
+
+li {
+    list-style: none;
+}
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 100px 0;
+}
+
+h1 {
+    max-width: 600px;
+    text-align: center;
+}
+
+header p {
+    text-align: center;
+}
+
+header img {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 39.5px);
+}
+
+.header-bevel {
+    border-top: 50px solid transparent;
+    border-left: 100vw solid var(--wit);
+
+    position: absolute;
+    top: calc(100% - 50px);
+}
+
+/* --------------- 4.2 Company description ------------------- */
+
+.company-description {
+    position: relative;
+    padding-bottom: 25px; /* to push .company-description-bevel down */
+}
+
+.company-description .inner-container {
+    flex-basis: 700px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.company-description .inner-container::after {
+    content: "hello";
+    font-size: 20rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--lichtpaars);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+@media screen and (max-width: 600px) {
+    .company-description .inner-container::after {
+        font-size: 9rem;
+    }
+}    
+
+.description-container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.company-description-bevel {
+    border-top: 50px solid transparent;
+    border-left: 100vw solid var(--lichtgrijs);
+
+    position: absolute;
+    top: calc(100% - 50px);
+}
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
