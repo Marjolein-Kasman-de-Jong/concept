@@ -61,12 +61,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-us h2 {
     color: var(--wit);
-    font-size: 2.3rem;
+    font-size: 2.25rem;
 }
 
 @media screen and (max-width: 600px) {
     .contact-us h2 {
-        font-size: 1.7rem;
+        font-size: 1.75rem;
     }
 }
 
@@ -81,7 +81,7 @@ li a {
 
 @media screen and (max-width: 600px) {
     li a {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
@@ -90,7 +90,7 @@ header {
 }
 
 header p {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -108,7 +108,7 @@ header p {
 
 @media screen and (max-width: 600px) {
     .description p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
@@ -120,13 +120,13 @@ a {
 
 @media screen and (max-width: 600px) {
     .case-studies p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
 .services p {
     color: var(--grijs);
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .contact-us p {
@@ -135,7 +135,7 @@ a {
 
 @media screen and (max-width: 600px) {
     .contact-us p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
@@ -145,7 +145,7 @@ label {
 
 @media screen and (max-width: 600px) {
     label {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
@@ -155,7 +155,7 @@ label {
 
 @media screen and (max-width: 600px) {
     footer p {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
 }
 
